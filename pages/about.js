@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
- 
+import AboutComponent from '../component/AboutComponent';
+
 class About extends Component {
 
   constructor(props) {
@@ -7,12 +8,13 @@ class About extends Component {
     // this.contentWillMount();
   }
 
- render(){
-     return(
-         <div><h1>Hello About</h1><br/><h2>content form about.js</h2><hr/>
-         </div>
-     );
- }
+  render() {
+    return (
+      <div>
+        <AboutComponent></AboutComponent>
+      </div>
+    );
+  }
 
 }
 
