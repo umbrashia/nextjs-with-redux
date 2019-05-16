@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Link from 'next/link';
 import HomeComponent from '../component/HomeComponent';
 // import { createStore, applyMiddleware, combineReducers } from 'redux';
 // import logger from 'redux-logger';

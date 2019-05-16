@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Header from './include/Header';
-import Footer from './include/Footer';
+// import Header from './include/Header';
+import {Header,Footer, SeoHead} from './include';
 
 class HomeComponent extends Component {
 
@@ -12,6 +12,7 @@ class HomeComponent extends Component {
     render() {
         return (
             <div>
+                <SeoHead></SeoHead>
                 <Header></Header>
                 <label>Hii Iam Index Home Page Calling.....</label>
                 <Footer></Footer>

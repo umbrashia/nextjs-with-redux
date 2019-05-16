@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import Header from './include/Header';
-import Footer from './include/Footer';
+import { Header, Footer, SeoHead } from './include';
 
 class AboutComponent extends Component {
 
@@ -12,6 +11,7 @@ class AboutComponent extends Component {
     render() {
         return (
             <div>
+                <SeoHead></SeoHead>
                 <Header></Header>
                 <label>Hello Iam About Page Calling.....</label>
                 <Footer></Footer>
