@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
+import App, { Container } from 'next/app';
 import HomeComponent from '../component/HomeComponent';
-// import { createStore, applyMiddleware, combineReducers } from 'redux';
-// import logger from 'redux-logger';
-// import thunk from 'redux-thunk';
-// import axios from 'axios';
-
-// @connect((store)=>{
-//   return {};
-// })
-class Index extends Component {
+import { Provider } from 'react-redux';
+import { initStore } from './store';
+import withRedux from 'next-redux-wrapper';
+class Index extends App {
 
     constructor(props) {
         super(props);
@@ -16,14 +12,18 @@ class Index extends Component {
     }
 
     render() {
+        const { store } = this.props;
+        console.log("asasasasasasa"+this.props);
         return (
-            <div>
-                <HomeComponent></HomeComponent>
-            </div>
+            <Container>
+                <Provider store={store}>
+                    <HomeComponent></HomeComponent>
+                </Provider>
+            </Container>
         );
     }
 
 }
 
 
-export default Index;
+export default withRedux(initStore,{ debug: true })(Index);

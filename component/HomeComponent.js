@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-// import Header from './include/Header';
 import {Header,Footer, SeoHead} from './include';
+import {connect} from 'react-redux';
 
 class HomeComponent extends Component {
 
@@ -23,4 +23,7 @@ class HomeComponent extends Component {
 }
 
 
-export default HomeComponent;
+export default connect((state)=>{
+    console.log(state);
+    return {seoData:state.seoReducer};
+})(HomeComponent);
