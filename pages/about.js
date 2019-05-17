@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import AboutComponent from '../component/AboutComponent';
+import { Provider } from 'react-redux';
+import  store  from './store';
 
 class About extends Component {
 
@@ -10,9 +12,9 @@ class About extends Component {
 
   render() {
     return (
-      <div>
+      <Provider store={store}>
         <AboutComponent></AboutComponent>
-      </div>
+      </Provider>
     );
   }
 

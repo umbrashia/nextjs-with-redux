@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import App, { Container } from 'next/app';
 import HomeComponent from '../component/HomeComponent';
 import { Provider } from 'react-redux';
-import { initStore } from './store';
-import withRedux from 'next-redux-wrapper';
-class Index extends App {
+import  store  from './store';
+
+class Index extends Component {
 
     constructor(props) {
         super(props);
@@ -12,18 +11,13 @@ class Index extends App {
     }
 
     render() {
-        const { store } = this.props;
-        console.log("asasasasasasa"+this.props);
         return (
-            <Container>
                 <Provider store={store}>
                     <HomeComponent></HomeComponent>
                 </Provider>
-            </Container>
         );
     }
 
 }
 
-
-export default withRedux(initStore,{ debug: true })(Index);
+export default Index;

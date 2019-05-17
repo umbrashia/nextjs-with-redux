@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Header, Footer, SeoHead } from './include';
-
+import { connect } from 'react-redux';
 class AboutComponent extends Component {
 
     constructor(props) {
@@ -22,4 +22,8 @@ class AboutComponent extends Component {
 }
 
 
-export default AboutComponent;
+export default connect((state) => {
+    return {
+        seoData: state.seoReducer.seoHeaderData
+    };
+})(AboutComponent);

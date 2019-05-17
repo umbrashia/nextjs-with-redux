@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Head from 'next/head';
+import {connect} from 'react-redux';
 class SeoHead extends Component {
 
 
@@ -12,7 +13,7 @@ class SeoHead extends Component {
                     <script src="https://cdn.snipcart.com/scripts/2.0/snipcart.js" data-api-key="YjdiNWIyOTUtZTIyMy00MWMwLTkwNDUtMzI1M2M2NTgxYjE0" id="snipcart"></script>
                     <link href="https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css" rel="stylesheet" type="text/css" />
                     <link href="/static/main.css" rel="stylesheet" />
-                    <meta name="title" content="qwerty" />
+                    <meta name="title" content={this.props.seoData.title} />
                     <meta name="description" content="jkl" />
                 </Head>
             </div>
@@ -22,4 +23,8 @@ class SeoHead extends Component {
 }
 
 
-export default SeoHead;
+export default connect((state)=>{
+    return {
+        seoData:state.seoReducer.seoHeaderData
+    };
+})(SeoHead);

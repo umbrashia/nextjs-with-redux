@@ -5,9 +5,9 @@ import reducers from '../component/reducers'
 
 const midd=applyMiddleware(thunk,logger);
 
-export const initStore = (initialState = {}) => {
-    console.log(initialState);
-    return createStore(reducers, initialState, midd);
-};
+// export const initStore = (initialState = {}) => {
+//     console.log(initialState);
+//     return createStore(reducers, initialState, midd);
+// };
 
-// export default createStore(reducers,midd);
+export default createStore(reducers,midd);
